@@ -10,7 +10,7 @@ public class Magic extends Hero {
     }
 
     @Override
-    public void applySuperPower(Boss boss, Hero[] heroes) {
+    public int applySuperPower(Boss boss, Hero[] heroes) {
         int coeff = RPG_Game.random.nextInt(5) + 1;
         for (int i = 0; i <heroes.length ; i++) {
             if (heroes[i].getHealth() > 0 && this != heroes[i] && boss.getDefence() != SuperAbility.BOOST) {
@@ -18,5 +18,6 @@ public class Magic extends Hero {
             }
         }
         System.out.println("Magic worked " + coeff);
+        return coeff;
     }
 }

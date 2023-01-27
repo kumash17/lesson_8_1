@@ -10,7 +10,7 @@ public class Berserk extends Hero {
     }
 
     @Override
-    public void applySuperPower(Boss boss, Hero[] heroes) {
+    public int applySuperPower(Boss boss, Hero[] heroes) {
         if (boss.getDamage() != 0) {
            setBlockedDamage(RPG_Game.random.nextInt(boss.getDamage() +1 ));
            if (boss.getHealth() > 0 && this.getHealth() > 0) {
@@ -19,6 +19,7 @@ public class Berserk extends Hero {
                System.out.println("Berserk work ");
            }
         }
+        return 0;
     }
 
     public void setBlockedDamage(int blockedDamage) {
